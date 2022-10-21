@@ -1,11 +1,11 @@
-# asdf-terragrunt-atlantis-config
+# asdf-terraform-config-inspect
 
-[terragrunt-atlantis-config](https://github.com/transcend-io/terragrunt-atlantis-config) plugin for the [asdf](https://github.com/asdf-vm/asdf) version manager.
+[terraform-config-inspect](https://github.com/IBM-Cloud/terraform-config-inspect) plugin for the [asdf](https://github.com/asdf-vm/asdf) version manager.
 
 ## Install
 
 ```shell
-asdf plugin-add terragrunt-atlantis-config https://github.com/IxDay/asdf-terragrunt-atlantis-config.git
+asdf plugin-add terraform-config-inspect https://github.com/IxDay/asdf-terraform-config-inspect.git
 ```
 
 ## Use

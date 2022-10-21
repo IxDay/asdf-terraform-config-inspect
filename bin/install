@@ -28,22 +28,24 @@ install() {
 	aarch64) arch="arm64" ;;
 	esac
 
-	local binary="terragrunt-atlantis-config_${version}_${platform}_${arch}"
+	local binary=""
 
 	local download_url
-	download_url="https://github.com/transcend-io/terragrunt-atlantis-config/releases/download/v${version}/${binary}.tar.gz"
+	download_url="https://github.com/IBM-Cloud/terraform-config-inspect/releases/download/v${version}/terraform-config-inspect_${version}_${platform}_${arch}.zip"
 
 	mkdir -p "${bin_install_path}"
 
-	echo "Downloading terragrunt-atlantis-config from ${download_url}"
+	echo "Downloading terraform-config-inspect from ${download_url}"
 
 	pushd "${bin_install_path}" >/dev/null
 
-	curl -sL "${download_url}" | tar zx -O "${binary}/${binary}" > "${bin_install_path}/terragrunt-atlantis-config"
+	curl -sL "${download_url}" > terraform-config-inspect.zip
+	unzip -p terraform-config-inspect.zip \
+		terraform-config-inspect > "${bin_install_path}/terraform-config-inspect"
 
-	chmod +x "${bin_install_path}/terragrunt-atlantis-config"
+	chmod +x "${bin_install_path}/terraform-config-inspect"
 
-	ln -s . "${install_path}/terragrunt-atlantis-config"
+	ln -s . "${install_path}/terraform-config-inspect"
 
 	popd >/dev/null
 }
